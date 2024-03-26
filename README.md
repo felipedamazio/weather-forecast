@@ -5,19 +5,34 @@
    
 <br>
 <br>
-   <!-- deploy future !!! -->
-   <!-- [![Deploy with Vercel](https://vercel.com/button)](https://climate-weather.vercel.app/) -->
+
+<!--    deploy future !!!  -->
+ <!--  [![Deploy with Vercel](https://vercel.com/button)](https://felps-portifolio.vercel.app/) -->
    
 </div>
 
-# Project description
+## Project description
 <p align="center"> Web application for consulting weather forecast data and your current location</p>
 
 <p align="center">PROJECT IN CONSTRUCTION !!!</p>
 
+ ## 🛠 Languages, Framaworks and Tools
+The following tools were used to build the project:
+<br>
 
-
-
+ <div style="display: inline_block">   
+ <img  alt="Felp-React" src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB">
+ <img  alt="Felp-Ts"  src="https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white">
+ <img  alt="Felp-Next" src="https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white">
+ <img  alt="Felp-Tailwind"  src="https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white"> 
+ <img  alt="Felp-Git" src="https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white">
+ <img  alt="Felp-Vercel" src="https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white">  
+</div>  
+<br>
+ <div style="display: inline_block">  
+<img alt="HTML" src="https://img.shields.io/badge/Made%20for-VSCode-1f425f.svg">
+<img alt="GitHub top language" src="https://img.shields.io/github/languages/top/felipedamazio/weather-forecast?style=plastic">
+</div>
 
 ## Getting Started
 ```bash
@@ -35,17 +50,17 @@ pnpm dev
 # or
 bun dev
 ```
- 
+
+
 ### Autor
 ---
 
 <a href="https://www.linkedin.com/in/felipe-damazio/">
 <img width="200" style="border-radius: 50%;" src="https://media.licdn.com/dms/image/D4D03AQEGbvDY5m-KrQ/profile-displayphoto-shrink_800_800/0/1710867005445?e=1717027200&v=beta&t=nWqsHp4WncDPxNYsxrRgKn5KmBPKUJRp9Oetw2y8wNo">  
  </a>
- 
 
 
-Developed by Felp
+Developed by Felp 🚀
 
 [![Linkedin Badge](https://img.shields.io/badge/-Felipe-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://)](https://www.linkedin.com/in/felipe-damazio/) 
 [![Gmail Badge](https://img.shields.io/badge/-lipjb@hotmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:lipjb@hotmail.com)](mailto:lipjb@hotmail.com)
