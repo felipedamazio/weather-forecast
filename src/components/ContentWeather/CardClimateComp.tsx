@@ -8,6 +8,7 @@ import axios from "axios";
 import { WeatherData } from "@/types/WeatherData";
 // Utils ---------
 import { convertKelvinToCelsius } from "@/utils/convertKelvinToCelsius";
+import { convertDate } from "@/utils/convertDate";
 // Comps ----------
 import { Clock } from "@/components/CurrentHour/Clock";
 import localFont from "next/font/local";
@@ -59,6 +60,11 @@ export const CardClimateData = () => {
 
   // --- clock
   const newDate = new Date();
+  const formatedDate = firstData?.dt_txt.split(" ")[0] ?? ''
+  
+  console.log(typeof(formatedDate),'data');
+ 
+  
 
   if (isLoading)
     return (
@@ -81,10 +87,9 @@ export const CardClimateData = () => {
         <span className="font-semibold text-sm text-gray-600">
           {data?.city.name}-{data?.city.country}
         </span>
-        <br />
+        <br />        
         <span className="font-semibold text-sm text-gray-400">
-          {" "}
-          {firstData?.dt_txt.split(" ")[0]}
+          {convertDate(formatedDate)}
         </span>
         <span>
           <Clock time={newDate.getTime()} />
