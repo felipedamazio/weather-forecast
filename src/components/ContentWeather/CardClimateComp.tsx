@@ -9,7 +9,10 @@ import { WeatherData } from "@/types/WeatherData";
 // Utils ---------
 import { convertKelvinToCelsius } from "@/utils/convertKelvinToCelsius";
 // Comps ----------
+import { Clock } from "@/components/CurrentHour/Clock";
+import localFont from "next/font/local";
 
+const mylocalFont = localFont({ src: "./DS-DIGI.ttf" });
 
 export const CardClimateData = () => {
   const [place, setPlace] = useAtom(placeAtom);
@@ -54,6 +57,9 @@ export const CardClimateData = () => {
     });
   });
 
+  // --- clock
+  const newDate = new Date();
+
   if (isLoading)
     return (
       <div className="flex items-center min-h-screen justify-center">
@@ -76,7 +82,13 @@ export const CardClimateData = () => {
           {data?.city.name}-{data?.city.country}
         </span>
         <br />
-        <span className="font-semibold text-sm text-gray-400"> March 13</span>
+        <span className="font-semibold text-sm text-gray-400">
+          {" "}
+          {firstData?.dt_txt.split(" ")[0]}
+        </span>
+        <span>
+          <Clock time={newDate.getTime()} />
+        </span>
       </div>
 
       <span className="temp absolute bottom-4 left-6 font-semibold text-7xl text-brown-900">
@@ -92,7 +104,7 @@ export const CardClimateData = () => {
             °↑
           </span>
         </p>
-      </span>      
+      </span>
       <div className="temp-scale absolute bottom-6 right-6 w-28 h-10 flex items-center justify-center bg-gray-100 rounded-lg">
         <span className="font-semibold text-xs text-gray-600">Celsius</span>
       </div>
