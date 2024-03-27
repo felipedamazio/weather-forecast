@@ -4,7 +4,7 @@
 <img alt="GitHub deploy" src="https://img.shields.io/github/deployments/felipedamazio/weather-forecast/production?style=for-the-badge&logo=vercel">   
 
    
-  [![Deploy with Vercel](https://vercel.com/button)](https://climate-weather.vercel.app/) 
+  [![Deploy with Vercel](https://vercel.com/button)](https://weather-forecast.vercel.app/) 
 
 </div>
 
