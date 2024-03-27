@@ -15,10 +15,9 @@ export const CardClimateData = () => {
   const [place, setPlace] = useAtom(placeAtom);
   const [loadingCity] = useAtom(loadingCityAtom);
 
-  const API_KEY = "39300b9b1458edad02ec4524938b0ad7";
-  // const API_KEY = process.env.NEXT_PUBLIC_WEATHER_KEY;
+  const API_KEY = process.env.NEXT_PUBLIC_WEATHER_KEY;
   const URL = URL_API;
-  const baseURL = `${URL}${place}&appid=${API_KEY}&cnt=56`; 
+  const baseURL = `${URL}${place}&appid=${API_KEY}&cnt=56`;
 
   const { isLoading, error, data, refetch } = useQuery<WeatherData>(
     "repoData",
@@ -69,7 +68,6 @@ export const CardClimateData = () => {
       </div>
     );
   console.log("data", data);
- 
 
   return (
     <div className="card w-96 h-64 relative p-6 bg-gradient-to-br from-yellow-200 to-white shadow-xl rounded-lg transition-transform duration-500 ease-in-out transform hover:scale-105 cursor-pointer">
@@ -94,7 +92,7 @@ export const CardClimateData = () => {
             °↑
           </span>
         </p>
-      </span>
+      </span>      
       <div className="temp-scale absolute bottom-6 right-6 w-28 h-10 flex items-center justify-center bg-gray-100 rounded-lg">
         <span className="font-semibold text-xs text-gray-600">Celsius</span>
       </div>

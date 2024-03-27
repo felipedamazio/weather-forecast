@@ -25,8 +25,8 @@ export function Navbar({ location }: Props) {
   const [place, setPlace] = useAtom(placeAtom);
   const [_, setLoadingCity] = useAtom(loadingCityAtom);
 
-  const API_KEY = "39300b9b1458edad02ec4524938b0ad7";
-  // const API_KEY = process.env.NEXT_PUBLIC_WEATHER_KEY;
+  
+  const API_KEY = process.env.NEXT_PUBLIC_WEATHER_KEY;
   const URL = URL_API_2;
 
   async function handleInputChang(value: string) {
