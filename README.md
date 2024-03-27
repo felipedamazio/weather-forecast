@@ -1,4 +1,5 @@
 # WEATHER FORECAST
+
 <div align="center">
 <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/felipedamazio/weather-forecast?style=for-the-badge">
 <img alt="GitHub deploy" src="https://img.shields.io/github/deployments/felipedamazio/weather-forecast/production?style=for-the-badge&logo=vercel">	
@@ -9,7 +10,7 @@
 
 </div>
 
-# Project description
+## 📜 Project description
 
 
 This project Create [npx create-next-app@latest](https://nextjs.org/docs/getting-started/installation) - <img align="center" alt="Next-logo" src="https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white" />
@@ -39,7 +40,7 @@ The following tools were used to build the project:
 </div>
    
 
-## Getting Started
+## 🚀 Getting Started
 ```bash
 npm install
 ```
