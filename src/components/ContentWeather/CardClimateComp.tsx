@@ -15,15 +15,16 @@ export const CardClimateData = () => {
   const [place, setPlace] = useAtom(placeAtom);
   const [loadingCity] = useAtom(loadingCityAtom);
 
+  const API_KEY = "39300b9b1458edad02ec4524938b0ad7";
   // const API_KEY = process.env.NEXT_PUBLIC_WEATHER_KEY;
-  const API_KEY = "cb6525c44bf35826a0223f93eedf14c2";
   const URL = URL_API;
+  const baseURL = `${URL}${place}&appid=${API_KEY}&cnt=56`; 
 
   const { isLoading, error, data, refetch } = useQuery<WeatherData>(
     "repoData",
     async () => {
       const { data } = await axios.get(
-        `${URL}forecast?q=${place}&appid=${API_KEY}&cnt=56`
+        `${URL}${place}&appid=${API_KEY}&cnt=56`
       );
       return data;
     }
