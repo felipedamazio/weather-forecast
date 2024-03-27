@@ -1,5 +1,8 @@
 import React from "react";
 import { useState } from "react";
+// API URL
+import { URL_API_2 } from "@/API/UrlApi";
+import { URL_API_3 } from "@/API/UrlApi";
 //Comps----------
 import { SearchBox } from "@/components/ContentWeather/SearchBox";
 // import { handleCurrentLocation } from "@/components/Location/handleCurrentLocation";
@@ -22,16 +25,16 @@ export function Navbar({ location }: Props) {
   const [place, setPlace] = useAtom(placeAtom);
   const [_, setLoadingCity] = useAtom(loadingCityAtom);
 
-  //   const API_KEY = process.env.NEXT_PUBLIC_WEATHER_KEY;
-  const API_KEY = "cb6525c44bf35826a0223f93eedf14c2";
+  const API_KEY = "39300b9b1458edad02ec4524938b0ad7";
+  // const API_KEY = process.env.NEXT_PUBLIC_WEATHER_KEY;
+  const URL = URL_API_2;
 
   async function handleInputChang(value: string) {
     setCity(value);
+    const baseURL = `${URL}${value}&appid=${API_KEY}`;
     if (value.length >= 3) {
       try {
-        const response = await axios.get(
-          `https://api.openweathermap.org/data/2.5/forecast?q=${place}&appid=${API_KEY}&cnt=56`
-        );
+        const response = await axios.get(baseURL);
 
         const suggestions = response.data.list.map((item: any) => item.name);
         setSuggestions(suggestions);
@@ -68,14 +71,15 @@ export function Navbar({ location }: Props) {
     }
   }
 
- function handleCurrentLocation() {
+  function handleCurrentLocation() {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(async (postiion) => {
         const { latitude, longitude } = postiion.coords;
+        const URL = URL_API_3;
         try {
           setLoadingCity(true);
           const response = await axios.get(
-            `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${API_KEY}`
+            `${URL}lat=${latitude}&lon=${longitude}&appid=${API_KEY}`
           );
           setTimeout(() => {
             setLoadingCity(false);
@@ -87,7 +91,7 @@ export function Navbar({ location }: Props) {
       });
     }
   }
-  
+
   return (
     <>
       <nav className="shadow-sm  sticky top-0 left-0 z-50 bg-white">

@@ -19,18 +19,18 @@ import { useEffect } from "react";
 export default function Page() {
 
   // const API_KEY = process.env.NEXT_PUBLIC_WEATHER_KEY;
-  const API_KEY = "cb6525c44bf35826a0223f93eedf14c2";
+  const API_KEY = "39300b9b1458edad02ec4524938b0ad7";
   const URL = URL_API;
 
   const [place, setPlace] = useAtom(placeAtom);
   const [loadingCity] = useAtom(loadingCityAtom)
 
-  const baseURL = `${URL}forecast?q=${place}&appid=${API_KEY}&cnt=56`;
+  // const baseURL = `${URL}${place}&appid=${API_KEY}&cnt=56`;
 
   const { isLoading, error, data } = useQuery<WeatherData>(
     "repoData",
     async () => {
-      const { data } = await axios.get(baseURL);
+      const { data } = await axios.get(`${URL}${place}&appid=${API_KEY}&cnt=56`);
       return data;
     }
   );
