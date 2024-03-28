@@ -31,8 +31,8 @@ export const Clock = ({ time: initial }: Props) => {
       : "Good Night 😴";
 
   return (
-    <div className="flex justify-center items-left flex-col">
-      <span >
+    <>
+      <span>
         <span className="hour font-semibold text-2xl text-green-500">
           {time.toLocaleTimeString()}
         </span>
@@ -41,6 +41,6 @@ export const Clock = ({ time: initial }: Props) => {
       <span className="msg font-semibold text-sl text-gray-400 ">
         {message}
       </span>
-    </div>
+    </>
   );
 };

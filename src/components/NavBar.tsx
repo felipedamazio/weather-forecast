@@ -101,7 +101,7 @@ export function Navbar({ location }: Props) {
             <MdWbSunny className="text-3xl mt-1 text-yellow-300" />
           </p>
           <section>
-            <div className="relative hidden md:flex">
+            <div className="relative hidden md:flex flex-col">
               <Clock time={newDate.getTime()} />
             </div>
           </section>
@@ -148,11 +148,11 @@ export function Navbar({ location }: Props) {
           />
         </div>
       </section>
-      <section className="flex   max-w-7xl px-3 md:hidden" >
-            <div className="relative flex justify-center items-center gap-2 flex-row">
-              <Clock time={newDate.getTime()} />
-            </div>
-          </section>
+      <section className="flex   max-w-7xl px-3 md:hidden">
+        <div className="relative flex justify-center items-center gap-2 flex-row">
+          <Clock time={newDate.getTime()} />
+        </div>
+      </section>
     </>
   );
 }
