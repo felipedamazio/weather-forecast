@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import localFont from "next/font/local";
-const mylocalFont = localFont({ src: "../../app/fonts/DS-DIGI.ttf" });
+// const mylocalFont = localFont({ src: "../../app/fonts/DS-DIGI.ttf" });
 
 type Props = {
   time: number;
@@ -32,7 +32,7 @@ export const Clock = ({ time: initial }: Props) => {
 
   return (
     <div className="flex justify-center items-left flex-col">
-      <span className={mylocalFont.className}>
+      <span >
         <span className="hour font-semibold text-2xl text-green-500">
           {time.toLocaleTimeString()}
         </span>
