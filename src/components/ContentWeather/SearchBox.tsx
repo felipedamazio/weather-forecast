@@ -13,7 +13,6 @@ type Props = {
 };
 
 export function SearchBox(props: Props) { 
-
   return (
     <form
       onSubmit={props.onSubmit}
