@@ -105,7 +105,7 @@ export function Navbar({ location }: Props) {
               <Clock time={newDate.getTime()} />
             </div>
           </section>
-          <section className="flex gap-2 items-center">
+          <section className="flex gap-[0.310rem] items-center">
             <MdMyLocation
               title="Your Current Location"
               onClick={handleCurrentLocation}
@@ -149,7 +149,7 @@ export function Navbar({ location }: Props) {
         </div>
       </section>
       <section className="flex   max-w-7xl px-3 md:hidden" >
-            <div className="relative ">
+            <div className="relative flex justify-center items-center gap-2 flex-row">
               <Clock time={newDate.getTime()} />
             </div>
           </section>

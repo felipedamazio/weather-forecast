@@ -25,7 +25,7 @@ export function SearchBox(props: Props) {
         value={props.value}
         onChange={props.onChange}
         placeholder="Search location.."
-        className="px-4 py-2 w-[230px] border border-gray-300 rounded-l-md focus:outline-none  focus:border-blue-500 h-full"        
+        className="px-4 py-2 w-[75%] border border-gray-300 rounded-l-md focus:outline-none  focus:border-blue-500 h-full"        
       />
       <button
         type="submit"
