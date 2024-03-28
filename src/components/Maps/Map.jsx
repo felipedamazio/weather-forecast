@@ -29,7 +29,7 @@ export function Map() {
 
   return (
     <div className="map-wrap w-[80%]">
-      <div ref={mapContainer} className="map h-[30vh]" />
+      <div ref={mapContainer} className="map h-[30vh] rounded-lg" />
     </div>
   );
 }
