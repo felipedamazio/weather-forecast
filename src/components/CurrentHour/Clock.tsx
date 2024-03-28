@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react";
-import localFont from "next/font/local";
-// const mylocalFont = localFont({ src: "../../app/fonts/DS-DIGI.ttf" });
+import { Orbitron } from "next/font/google";
+
+const myOrbitronFont = Orbitron({
+  weight: "400",
+  subsets: ["latin"],
+});
 
 type Props = {
   time: number;
@@ -32,15 +36,15 @@ export const Clock = ({ time: initial }: Props) => {
 
   return (
     <>
-      <span>
-        <span className="hour font-semibold text-2xl text-green-500">
+      <span className={myOrbitronFont.className}>
+        <span className="hour  font-semibold text-lg text-green-500">
           {time.toLocaleTimeString()}
         </span>
       </span>
 
       <span className="msg font-semibold text-sl text-gray-400 ">
         {message}
-      </span>
+      </span>      
     </>
   );
 };

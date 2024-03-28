@@ -17,24 +17,25 @@ import { useAtom } from "jotai";
 import { useEffect } from "react";
 
 export default function Page() {
-
-  const API_KEY = process.env.NEXT_PUBLIC_WEATHER_KEY;  
+  const API_KEY = process.env.NEXT_PUBLIC_WEATHER_KEY;
   const URL = URL_API;
 
   const [place, setPlace] = useAtom(placeAtom);
-  const [loadingCity] = useAtom(loadingCityAtom)
+  const [loadingCity] = useAtom(loadingCityAtom);
 
   // const baseURL = `${URL}${place}&appid=${API_KEY}&cnt=56`;
 
   const { isLoading, error, data } = useQuery<WeatherData>(
     "repoData",
     async () => {
-      const { data } = await axios.get(`${URL}${place}&appid=${API_KEY}&cnt=56`);
+      const { data } = await axios.get(
+        `${URL}${place}&appid=${API_KEY}&cnt=56`
+      );
       return data;
     }
   );
 
-  console.log("data", data); 
+  console.log("data", data);
 
   // tratament loading or error page request
 
@@ -60,6 +61,13 @@ export default function Page() {
           <Content />
         </section>
       </main>
+      <footer>
+        <span className="flex justify-center font-semibold text-sm text-gray-400">
+          <a href="https://www.linkedin.com/in/felipe-damazio/" target="_blank">
+            Developed by Felp
+          </a>
+        </span>
+      </footer>
     </div>
   );
 }
