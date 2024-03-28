@@ -3,7 +3,7 @@ import React, { useRef, useEffect, useState } from "react";
 import * as maptilersdk from "@maptiler/sdk";
 import "@maptiler/sdk/dist/maptiler-sdk.css";
 
-const API_MAP_KEY = "dfj41jhMG9SqGX5uwzS2";
+const API_MAP_KEY = process.env.NEXT_PUBLIC_API_MAPTILER_KEY;
 
 export function Map() {
   const mapContainer = useRef(null);
@@ -19,18 +19,17 @@ export function Map() {
       container: mapContainer.current,
       style: maptilersdk.MapStyle.STREETS,
       center: [tokyo.lng, tokyo.lat],
-      zoom: zoom
+      zoom: zoom,
     });
 
-    new maptilersdk.Marker({color: "#FF0000"})
-      .setLngLat([139.7525,35.6846])
+    new maptilersdk.Marker({ color: "#FF0000" })
+      .setLngLat([139.7525, 35.6846])
       .addTo(map.current);
-
   }, [tokyo.lng, tokyo.lat, zoom]);
 
   return (
-    <div className="map-wrap w-[100%] h-[35vh]">
-      <div ref={mapContainer} className="map" />
+    <div className="map-wrap w-[80%]">
+      <div ref={mapContainer} className="map h-[30vh]" />
     </div>
   );
 }
