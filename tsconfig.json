@@ -28,6 +28,6 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "src/components/ContentWeather/Weather.tsx"
-  ],
+, "src/components/Maps/Map.jsx"  ],
   "exclude": ["node_modules"]
 }
