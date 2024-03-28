@@ -15,7 +15,6 @@ import { Content } from "@/components/Content";
 import { Footer } from "@/components/Footer";
 import { loadingCityAtom, placeAtom } from "./atom";
 import { useAtom } from "jotai";
-import { useEffect } from "react";
 
 export default function Page() {
   const API_KEY = process.env.NEXT_PUBLIC_WEATHER_KEY;
@@ -24,14 +23,12 @@ export default function Page() {
   const [place, setPlace] = useAtom(placeAtom);
   const [loadingCity] = useAtom(loadingCityAtom);
 
-  // const baseURL = `${URL}${place}&appid=${API_KEY}&cnt=56`;
+  const baseURL = `${URL}${place}&appid=${API_KEY}&cnt=56`;
 
   const { isLoading, error, data } = useQuery<WeatherData>(
     "repoData",
     async () => {
-      const { data } = await axios.get(
-        `${URL}${place}&appid=${API_KEY}&cnt=56`
-      );
+      const { data } = await axios.get(baseURL);
       return data;
     }
   );
