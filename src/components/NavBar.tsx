@@ -13,6 +13,7 @@ import { loadingCityAtom, placeAtom } from "@/app/atom";
 import { useAtom } from "jotai";
 //Request axios import
 import axios from "axios";
+import { Clock } from "@/components/CurrentHour/Clock";
 
 type Props = { location?: string };
 
@@ -25,7 +26,6 @@ export function Navbar({ location }: Props) {
   const [place, setPlace] = useAtom(placeAtom);
   const [_, setLoadingCity] = useAtom(loadingCityAtom);
 
-  
   const API_KEY = process.env.NEXT_PUBLIC_WEATHER_KEY;
   const URL = URL_API_2;
 
@@ -91,7 +91,7 @@ export function Navbar({ location }: Props) {
       });
     }
   }
-
+  const newDate = new Date();
   return (
     <>
       <nav className="shadow-sm  sticky top-0 left-0 z-50 bg-white">
@@ -100,7 +100,11 @@ export function Navbar({ location }: Props) {
             <span className="text-gray-500 text-3xl">Weather</span>
             <MdWbSunny className="text-3xl mt-1 text-yellow-300" />
           </p>
-          {/*  */}
+          <section>
+            <div className="relative hidden md:flex">
+              <Clock time={newDate.getTime()} />
+            </div>
+          </section>
           <section className="flex gap-2 items-center">
             <MdMyLocation
               title="Your Current Location"
@@ -110,8 +114,6 @@ export function Navbar({ location }: Props) {
             <MdOutlineLocationOn className="text-3xl" />
             <p className="text-slate-900/80 text-sm"> {location} </p>
             <div className="relative hidden md:flex">
-              {/* SearchBox */}
-
               <SearchBox
                 value={city}
                 onSubmit={handleSubmiSearch}
@@ -131,8 +133,6 @@ export function Navbar({ location }: Props) {
       </nav>
       <section className="flex   max-w-7xl px-3 md:hidden ">
         <div className="relative ">
-          {/* SearchBox */}
-
           <SearchBox
             value={city}
             onSubmit={handleSubmiSearch}
@@ -148,6 +148,11 @@ export function Navbar({ location }: Props) {
           />
         </div>
       </section>
+      <section className="flex   max-w-7xl px-3 md:hidden" >
+            <div className="relative ">
+              <Clock time={newDate.getTime()} />
+            </div>
+          </section>
     </>
   );
 }

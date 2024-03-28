@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect,useState } from "react";
 import { useQuery } from "react-query";
 import { loadingCityAtom, placeAtom } from "@/app/atom";
 import { useAtom } from "jotai";
@@ -10,10 +10,6 @@ import { WeatherData } from "@/types/WeatherData";
 import { convertKelvinToCelsius } from "@/utils/convertKelvinToCelsius";
 import { convertDate } from "@/utils/convertDate";
 // Comps ----------
-import { Clock } from "@/components/CurrentHour/Clock";
-import localFont from "next/font/local";
-
-const mylocalFont = localFont({ src: "./DS-DIGI.ttf" });
 
 export const CardClimateData = () => {
   const [place, setPlace] = useAtom(placeAtom);
@@ -56,13 +52,11 @@ export const CardClimateData = () => {
       const entryTime = new Date(entry.dt * 1000).getHours();
       return entryDate === date && entryTime >= 6;
     });
-  });
-
-  // --- clock
-  const newDate = new Date();
+  });  
+ 
   const formatedDate = firstData?.dt_txt.split(" ")[0] ?? ''
   
-  console.log(typeof(formatedDate),'data');
+  console.log(formatedDate,'data');
  
   
 
@@ -89,11 +83,8 @@ export const CardClimateData = () => {
         </span>
         <br />        
         <span className="font-semibold text-sm text-gray-400">
-          {convertDate(formatedDate)}
-        </span>
-        <span>
-          <Clock time={newDate.getTime()} />
-        </span>
+          {formatedDate}
+        </span>  
       </div>
 
       <span className="temp absolute bottom-4 left-6 font-semibold text-7xl text-brown-900">
