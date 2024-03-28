@@ -1,4 +1,4 @@
-import { useEffect,useState } from "react";
+import { useEffect, useState } from "react";
 import { useQuery } from "react-query";
 import { loadingCityAtom, placeAtom } from "@/app/atom";
 import { useAtom } from "jotai";
@@ -52,13 +52,11 @@ export const CardClimateData = () => {
       const entryTime = new Date(entry.dt * 1000).getHours();
       return entryDate === date && entryTime >= 6;
     });
-  });  
- 
-  const formatedDate = firstData?.dt_txt.split(" ")[0] ?? ''
-  
-  console.log(formatedDate,'data');
- 
-  
+  });
+
+  const formatedDate = firstData?.dt_txt.split(" ")[0] ?? "";
+
+  console.log(formatedDate, "data");
 
   if (isLoading)
     return (
@@ -81,10 +79,10 @@ export const CardClimateData = () => {
         <span className="font-semibold text-sm text-gray-600">
           {data?.city.name}-{data?.city.country}
         </span>
-        <br />        
+        <br />
         <span className="font-semibold text-sm text-gray-400">
-          {formatedDate}
-        </span>  
+          {convertDate(formatedDate)}
+        </span>
       </div>
 
       <span className="temp absolute bottom-4 left-6 font-semibold text-7xl text-brown-900">

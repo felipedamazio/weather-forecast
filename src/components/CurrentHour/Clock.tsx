@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import localFont from "next/font/local";
-const mylocalFont = localFont({ src: "../../assets/fonts/DS-DIGI.ttf" });
+const mylocalFont = localFont({ src: "../../app/fonts/DS-DIGI.ttf" });
 
 type Props = {
   time: number;
