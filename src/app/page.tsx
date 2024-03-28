@@ -12,6 +12,7 @@ import { useQuery } from "react-query";
 // Comps ----------
 import { Navbar } from "@/components/NavBar";
 import { Content } from "@/components/Content";
+import { Footer } from "@/components/Footer";
 import { loadingCityAtom, placeAtom } from "./atom";
 import { useAtom } from "jotai";
 import { useEffect } from "react";
@@ -62,11 +63,7 @@ export default function Page() {
         </section>
       </main>
       <footer>
-        <span className="flex justify-center font-semibold text-sm text-gray-400">
-          <a href="https://www.linkedin.com/in/felipe-damazio/" target="_blank">
-            Developed by Felp
-          </a>
-        </span>
+        <Footer />
       </footer>
     </div>
   );

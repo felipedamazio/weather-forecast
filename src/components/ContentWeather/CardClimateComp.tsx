@@ -22,9 +22,7 @@ export const CardClimateData = () => {
   const { isLoading, error, data, refetch } = useQuery<WeatherData>(
     "repoData",
     async () => {
-      const { data } = await axios.get(
-        `${URL}${place}&appid=${API_KEY}&cnt=56`
-      );
+      const { data } = await axios.get(baseURL);
       return data;
     }
   );
