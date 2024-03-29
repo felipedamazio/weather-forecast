@@ -29,7 +29,7 @@ export function Map({data}) {
   }, [position.lng, position.lat, zoom]);
 
   return (
-    <div className="map-wrap w-[80%]">
+    <div className="map-wrap w-[100%]">
       <div ref={mapContainer} className="map h-[30vh] rounded-lg" />
     </div>
   );
