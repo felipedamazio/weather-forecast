@@ -11,7 +11,7 @@ export function Map({data}) {
   const mapContainer = useRef(null);
   const map = useRef(null);
   const position = { lng: data?.city.coord.lon, lat: data?.city.coord.lat };
-  const [zoom] = useState(14);
+  const [zoom] = useState(11);
 
   maptilersdk.config.apiKey = API_MAP_KEY;
 
