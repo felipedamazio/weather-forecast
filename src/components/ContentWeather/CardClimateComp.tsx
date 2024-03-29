@@ -52,11 +52,9 @@ export const CardClimateData = () => {
     });
   });
 
-  const formatedDate = firstData?.dt_txt.split(" ")[0] ?? "";
-
-  console.log(formatedDate, "date");
-  console.log(data?.city.coord.lat, "data");
-  
+ 
+  const formatedDate = firstData?.dt_txt.split(" ")[0] ?? ""; 
+  console.log("Req data", data);
 
   if (isLoading)
     return (
@@ -70,10 +68,7 @@ export const CardClimateData = () => {
         {/* @ts-ignore */}
         <p className="text-red-400">{error.message}</p>
       </div>
-    );
-
-  console.log("Req data", data);
-  console.log("Req data", typeof data);
+    );  
 
   return (
     <div className="card w-96 h-64 relative p-6 bg-gradient-to-br from-yellow-200 to-white shadow-xl rounded-lg transition-transform duration-500 ease-in-out transform hover:scale-105 cursor-pointer">
