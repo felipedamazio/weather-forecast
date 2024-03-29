@@ -1,9 +1,4 @@
-import axios from "axios";
-
-import { URL_API } from "@/API/UrlApi";
-import React, { KeyboardEvent } from "react";
 import { IoSearch } from "react-icons/io5";
-import { CardClimateData } from "@/components/ContentWeather/CardClimateComp";
 
 type Props = {
   className?: string;
@@ -12,7 +7,7 @@ type Props = {
   onSubmit: React.FormEventHandler<HTMLFormElement> | undefined;
 };
 
-export function SearchBox(props: Props) { 
+export function SearchBox(props: Props) {
   return (
     <form
       onSubmit={props.onSubmit}
@@ -24,7 +19,7 @@ export function SearchBox(props: Props) {
         value={props.value}
         onChange={props.onChange}
         placeholder="Search location.."
-        className="px-4 py-2 w-[90%] border border-gray-300 rounded-l-md focus:outline-none  focus:border-blue-500 h-full"        
+        className="px-4 py-2 w-[90%] border border-gray-300 rounded-l-md focus:outline-none  focus:border-blue-500 h-full"
       />
       <button
         type="submit"

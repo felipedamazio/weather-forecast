@@ -27,7 +27,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/components/ContentWeather/Weather.tsx"
+    "src/components/Maps/Map.jsx",
+    "src/components/Maps/Marker.jsx"
   ],
   "exclude": ["node_modules"]
 }
