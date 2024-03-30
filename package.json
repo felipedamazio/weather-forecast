@@ -11,6 +11,7 @@
   "dependencies": {
     "@maptiler/sdk": "^1.2.1",
     "axios": "^1.6.8",
+    "clsx": "^2.1.0",
     "date-fns": "^3.6.0",
     "dotenv": "^16.4.5",
     "jotai": "^2.7.1",
