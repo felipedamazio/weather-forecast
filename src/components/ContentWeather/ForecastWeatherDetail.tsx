@@ -1,7 +1,7 @@
 /** @format */
 
 import React from "react";
-import { CreateContainer } from "./CreateContainer";
+import { CreateContainer } from "../../utils/CreateContainer";
 import WeatherIcon from "./WeatherIcon";
 import { WeatherDetails, WeatherDetailProps } from "./WeatherDetails";
 import { convertKelvinToCelsius } from "@/utils/convertKelvinToCelsius";
