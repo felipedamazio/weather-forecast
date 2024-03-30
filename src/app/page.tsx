@@ -5,7 +5,7 @@
 import { URL_API } from "@/API/UrlApi";
 // Types Weather
 import { WeatherData } from "@/types/WeatherData";
-// red axios import
+// req axios import
 import axios from "axios";
 // Use query import
 import { useQuery } from "react-query";
@@ -21,9 +21,9 @@ export default function Page() {
   const URL = URL_API;
 
   const [place, setPlace] = useAtom(placeAtom);
-  const [loadingCity] = useAtom(loadingCityAtom);
+  // const [loadingCity] = useAtom(loadingCityAtom);
 
-  const baseURL = `${URL}${place}&appid=${API_KEY}&cnt=56`;
+  const baseURL = `${URL}${place}&appid=${API_KEY}&units=metric&lang=pt`;
 
   const { isLoading, error, data } = useQuery<WeatherData>(
     "repoData",

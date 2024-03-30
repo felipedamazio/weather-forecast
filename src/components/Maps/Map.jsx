@@ -1,9 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
-// import pinMarker from "../assets/img/pin-verde.png";
 import * as maptilersdk from "@maptiler/sdk";
 import "@maptiler/sdk/dist/maptiler-sdk.css";
 import { Marker } from "@/components/Maps/Marker";
-import { WeatherData } from "@/types/WeatherData";
 
 export function Map({data}) {
   const API_MAP_KEY = process.env.NEXT_PUBLIC_API_MAPTILER_KEY;
