@@ -17,10 +17,9 @@ import { CreateContainer } from "@/utils/CreateContainer";
 import WeatherIcon from "@/components/ContentWeather/WeatherIcon";
 import { FaTemperatureHigh, FaTemperatureLow } from "react-icons/fa";
 import { getDayOrNightIcon } from "@/utils/getDayOrNightIcon";
-import { format } from "date-fns";
+import { format,fromUnixTime } from "date-fns";
 import { metersToKilometers } from "@/utils/metersToKilometers";
 import { convertWindSpeed } from "@/utils/convertWindSpeed";
-
 import { Alfa_Slab_One } from "next/font/google";
 
 const myFontAlfa_Slab_One = Alfa_Slab_One({
@@ -100,7 +99,7 @@ export const CardClimateData = () => {
       <div className="weather-degree-infos flex flex-row items-center">
         <span className="temp flex flex-col  bottom-4 left-6 font-semibold text-7xl text-brown-900 gap-3">
           <div className="">
-            {convertKelvinToCelsius(firstData?.main.temp ?? 296.37)}°
+            {convertKelvinToCelsius(firstData?.main.temp ?? 0)}°
             <div className="temp-scale bottom-6 right-6 w-20 h-5 flex items-center justify-center bg-gray-100 rounded-lg">
               <span className="font-semibold text-xs text-gray-600">
                 Celsius
@@ -144,8 +143,11 @@ export const CardClimateData = () => {
       </div>
       <CreateContainer className="bg-yellow-300/80  px-6 gap-4 justify-between overflow-x-auto">
         <WeatherDetails
-          sunrise={format(data?.city.sunrise ?? 1702949452, "H:mm")}
-          sunset={format(data?.city.sunset ?? 1702517657, "H:mm")}
+          sunrise={format(
+            fromUnixTime(data?.city.sunrise ?? 1702517657),
+            "H:mm"
+          )}
+          sunset={format(fromUnixTime(data?.city.sunset ?? 1702517657), "H:mm")}
           visability={metersToKilometers(firstData?.visibility ?? 10000)}
           airPressure={`${firstData?.main.pressure} hPa`}
           humidity={`${firstData?.main.humidity}%`}

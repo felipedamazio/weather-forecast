@@ -3,8 +3,9 @@
 import React from "react";
 import { CreateContainer } from "../../utils/CreateContainer";
 import WeatherIcon from "./WeatherIcon";
-import { WeatherDetails, WeatherDetailProps } from "./WeatherDetails";
+import { WeatherDetails } from "./WeatherDetails";
 import { convertKelvinToCelsius } from "@/utils/convertKelvinToCelsius";
+import { WeatherDetailProps } from "@/types/WeatherDetailProps";
 
 export interface ForecastWeatherDetailProps extends WeatherDetailProps {
   weatehrIcon: string;
@@ -17,9 +18,7 @@ export interface ForecastWeatherDetailProps extends WeatherDetailProps {
   description: string;
 }
 
-export function ForecastWeatherDetail(
-  props: ForecastWeatherDetailProps
-) {
+export function ForecastWeatherDetail(props: ForecastWeatherDetailProps) {
   const {
     weatehrIcon = "02d",
     date = "19.09",

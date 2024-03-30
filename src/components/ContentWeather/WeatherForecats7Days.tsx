@@ -3,6 +3,11 @@ import { WeatherData } from "@/types/WeatherData";
 import { format, parseISO, fromUnixTime } from "date-fns";
 import { metersToKilometers } from "@/utils/metersToKilometers";
 import { convertWindSpeed } from "@/utils/convertWindSpeed";
+import { Alfa_Slab_One } from "next/font/google";
+const myFontAlfa_Slab_One = Alfa_Slab_One({
+  weight: "400",
+  subsets: ["latin"],
+});
 
 type Props = {
   data?: WeatherData;
@@ -24,11 +29,16 @@ export const WeatherForecats7Days = ({ data }: Props) => {
       return entryDate === date && entryTime >= 6;
     });
   });
+
   return (
     <>
       {/* 7 day forcast data  */}
       <section className="flex w-full flex-col gap-4  ">
-        <p className="text-2xl">Forcast (7 days)</p>
+        <p className="text-lg text-gray-500">
+          <span className={myFontAlfa_Slab_One.className}>
+            Forcast (7 days)
+          </span>
+        </p>
         {firstDataForEachDate.map((d, i) => (
           <ForecastWeatherDetail
             key={i}

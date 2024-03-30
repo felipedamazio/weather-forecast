@@ -5,19 +5,11 @@ import { LuEye, LuSunrise, LuSunset } from "react-icons/lu";
 import { FiDroplet } from "react-icons/fi";
 import { MdAir } from "react-icons/md";
 import { ImMeter } from "react-icons/im";
-
-export interface WeatherDetailProps {
-  sunrise: string;
-  sunset: string;
-  humidity: string;
-  visability: string;
-  windSpeed: string;
-  airPressure: string;
-}
+import { WeatherDetailProps } from "@/types/WeatherDetailProps";
 
 export function WeatherDetails(props: WeatherDetailProps) {
   const {
-    sunrise = "6.20",
+    sunrise = "6:20",
     sunset = "18:48",
     humidity = "61%",
     visability = "25km",
