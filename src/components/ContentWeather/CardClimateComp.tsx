@@ -13,7 +13,7 @@ import { convertDate } from "@/utils/convertDate";
 // Comps ----------
 import { WeatherDetailsHours } from "@/components/ContentWeather/WeatherDetailsHours";
 import { WeatherDetails } from "@/components/ContentWeather/WeatherDetails";
-import { CreateContainer } from "@/utils/CreateContainer";
+import { CreateContainer } from "@/components/CreateDefaultContainer/CreateContainer";
 import WeatherIcon from "@/components/ContentWeather/WeatherIcon";
 import { FaTemperatureHigh, FaTemperatureLow } from "react-icons/fa";
 import { getDayOrNightIcon } from "@/utils/getDayOrNightIcon";

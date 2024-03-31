@@ -23,7 +23,7 @@ export default function Page() {
   const [place, setPlace] = useAtom(placeAtom);
   // const [loadingCity] = useAtom(loadingCityAtom);
 
-  const baseURL = `${URL}${place}&appid=${API_KEY}&units=metric&lang=pt`;
+  const baseURL = `${URL}${place}&appid=${API_KEY}&cnt=56`;
 
   const { isLoading, error, data } = useQuery<WeatherData>(
     "repoData",

@@ -4,6 +4,7 @@ import { format, parseISO, fromUnixTime } from "date-fns";
 import { metersToKilometers } from "@/utils/metersToKilometers";
 import { convertWindSpeed } from "@/utils/convertWindSpeed";
 import { Alfa_Slab_One } from "next/font/google";
+import { convertDate } from "@/utils/convertDate";
 const myFontAlfa_Slab_One = Alfa_Slab_One({
   weight: "400",
   subsets: ["latin"],
@@ -45,7 +46,7 @@ export const WeatherForecats7Days = ({ data }: Props) => {
             description={d?.weather[0].description ?? ""}
             weatehrIcon={d?.weather[0].icon ?? "01d"}
             date={d ? format(parseISO(d.dt_txt), "dd.MM") : ""}
-            day={d ? format(parseISO(d.dt_txt), "dd.MM") : "EEEE"}
+            day={d ? convertDate(d.dt_txt).split(",").shift() : ""}
             feels_like={d?.main.feels_like ?? 0}
             temp={d?.main.temp ?? 0}
             temp_max={d?.main.temp_max ?? 0}
