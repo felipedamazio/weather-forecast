@@ -3,21 +3,17 @@ import { useQuery } from "react-query";
 import { loadingCityAtom, placeAtom } from "@/app/atom";
 import { useAtom } from "jotai";
 import { URL_API } from "@/API/UrlApi";
-// req axios import
 import axios from "axios";
-// Types Weather --------
 import { WeatherData } from "@/types/WeatherData";
-// Utils ---------
 import { convertKelvinToCelsius } from "@/utils/convertKelvinToCelsius";
 import { convertDate } from "@/utils/convertDate";
-// Comps ----------
 import { WeatherDetailsHours } from "@/components/ContentWeather/WeatherDetailsHours";
 import { WeatherDetails } from "@/components/ContentWeather/WeatherDetails";
 import { CreateContainer } from "@/components/CreateDefaultContainer/CreateContainer";
 import WeatherIcon from "@/components/ContentWeather/WeatherIcon";
 import { FaTemperatureHigh, FaTemperatureLow } from "react-icons/fa";
 import { getDayOrNightIcon } from "@/utils/getDayOrNightIcon";
-import { format,fromUnixTime } from "date-fns";
+import { format, fromUnixTime } from "date-fns";
 import { metersToKilometers } from "@/utils/metersToKilometers";
 import { convertWindSpeed } from "@/utils/convertWindSpeed";
 import { Alfa_Slab_One } from "next/font/google";
@@ -47,26 +43,7 @@ export const CardClimateData = () => {
     refetch();
   }, [place, refetch]);
 
-  const firstData = data?.list[0];
-
-  // console.log("error", error);
-
-  const uniqueDates = [
-    ...new Set(
-      data?.list.map(
-        (entry) => new Date(entry.dt * 1000).toISOString().split("T")[0]
-      )
-    ),
-  ];
-
-  // Filtering data to get the first entry after 6 AM for each unique date
-  const firstDataForEachDate = uniqueDates.map((date) => {
-    return data?.list.find((entry) => {
-      const entryDate = new Date(entry.dt * 1000).toISOString().split("T")[0];
-      const entryTime = new Date(entry.dt * 1000).getHours();
-      return entryDate === date && entryTime >= 6;
-    });
-  });
+  const firstData = data?.list[1];
 
   const formatedDate = firstData?.dt_txt.split(" ")[0] ?? "";
   console.log("Req data", data);
