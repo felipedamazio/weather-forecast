@@ -59,7 +59,7 @@ export default function Page() {
           <Content data={data} />
         </section>
       </main>
-      <footer>
+      <footer className="pb-10">
         <Footer />
       </footer>
     </div>
