@@ -27,7 +27,7 @@ export const WeatherForecats7Days = ({ data }: Props) => {
     return data?.list.find((entry) => {
       const entryDate = new Date(entry.dt * 1000).toISOString().split("T")[0];
       const entryTime = new Date(entry.dt * 1000).getHours();
-      return entryDate === date && entryTime >= 6;
+      return entryDate === date && entryTime >= 8;
     });
   });
 
