@@ -70,6 +70,7 @@ Developed by Felp 🚀
 [![Gmail Badge](https://img.shields.io/badge/-lipjb@hotmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:lipjb@hotmail.com)](mailto:lipjb@hotmail.com)
 
 --
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
