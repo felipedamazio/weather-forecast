@@ -24,7 +24,12 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <title>Weather Forecast</title>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link
+          rel="icon"
+          href="/icon.png?<generated>"
+          type="image/<generated>"
+          sizes="<generated>"
+        />
       </head>
       <QueryClientProvider client={queryClient}>
         <body className={inter.className}>{children}</body>
