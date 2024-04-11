@@ -1,12 +1,12 @@
-import type { Config } from "tailwindcss"
+import type { Config } from "tailwindcss";
 
 const config = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
   ],
   prefix: "",
   theme: {
@@ -19,6 +19,29 @@ const config = {
     },
     extend: {
       keyframes: {
+        sunshines: {
+          "0%": {
+            transform: "scale(1)",
+            opacity: "0.6",
+          },
+
+          "100%": {
+            transform: "scale(1.4)",
+            opacity: "0",
+          },
+        },
+
+        clouds: {
+          "0% ": { transform: "translateX(15px)" },
+
+          "50%": {
+            transform: "translateX(0px)",
+          },
+
+          "100%": {
+            transform: "translateX(15px)",
+          },
+        },
         "accordion-down": {
           from: { height: "0" },
           to: { height: "var(--radix-accordion-content-height)" },
@@ -35,6 +58,6 @@ const config = {
     },
   },
   plugins: [require("tailwindcss-animate")],
-} satisfies Config
+} satisfies Config;
 
-export default config
+export default config;

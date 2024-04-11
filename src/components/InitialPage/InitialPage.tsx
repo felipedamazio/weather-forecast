@@ -1,3 +1,4 @@
+import { SunAnimated } from "@/components/InitialPage/SunAnimated";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -15,19 +16,23 @@ import {
 export function InitialPage() {
   return (
     <Sheet>
-      <div className="flex flex-col gap-4">
+      <section className="flex flex-col items-center gap-4">
+        <span>
+          <SunAnimated />
+        </span>
+        <span>Weather Forecasts</span>
         <SheetTrigger asChild>
           <Button variant="outline">About Project</Button>
         </SheetTrigger>
         <Button className="animate-bounce">
-          <a href="/weatherpage/page">Get Started</a>
+          <a href="/weather">Get Started</a>
         </Button>
-      </div>
-      <div>
+      </section>
+      <section className="flex items-center justify-center">
         <a href="https://www.linkedin.com/in/felipe-damazio/" target="_blank">
           Developed by Felp
         </a>
-      </div>
+      </section>
       <SheetContent>
         <SheetHeader>
           <SheetTitle>Edit profile</SheetTitle>
