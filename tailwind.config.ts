@@ -4,8 +4,8 @@ import withMT from "@material-tailwind/react/utils/withMT";
 const config = withMT({
   darkMode: ["class"],
   content: [
-    "./pages/**/*.{ts,tsx}",
-    "./components/**/*.{ts,tsx}",
+    "./pages/**/*.{ts,tsx,jsx}",
+    "./components/**/*.{ts,tsx,jsx}",
     "./app/**/*.{ts,tsx}",
     "./src/**/*.{ts,tsx}",
   ],
