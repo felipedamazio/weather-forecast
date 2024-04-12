@@ -83,7 +83,7 @@ export const CardClimateData = () => {
               </span>
             </div>
           </div>
-          <p className="flex gap-2 text-xs text-gray-500 pb-2 ">
+          <div className="flex gap-2 text-xs text-gray-500 pb-2 ">
             <div className="temp-min flex items-center">
               <FaTemperatureLow className="text-3xl" />
               <span className={myFontAlfa_Slab_One.className}>
@@ -98,7 +98,7 @@ export const CardClimateData = () => {
                 {convertKelvinToCelsius(firstData?.main.temp_max ?? 0)}°
               </span>
             </div>
-          </p>
+          </div>
         </span>
         <div className="flex flex-col items-center absolute top-9 right-12 ">
           <WeatherIcon
