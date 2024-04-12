@@ -108,7 +108,7 @@ const SheetTitle = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <SheetPrimitive.Title
     ref={ref}
-    className={cn("text-lg font-semibold text-gray-950 dark:text-gray-50", className)}
+    className={cn("text-[2rem] font-semibold text-gray-950 dark:text-gray-50", className)}
     {...props}
   />
 ))

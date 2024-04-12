@@ -1,17 +1,29 @@
 import { SunAnimated } from "@/components/InitialPage/SunAnimated";
+import { Orbitron } from "next/font/google";
+import { FaLinkedin, FaGithubSquare, FaReact } from "react-icons/fa";
+import { SiNextdotjs, SiTailwindcss } from "react-icons/si";
+import { RiJavascriptFill } from "react-icons/ri";
+import { BiLogoTypescript } from "react-icons/bi";
+import Image from "next/image";
+import FelpAvatar from "@/assets/img/FelpAvatar.png";
+import vercel from "@/assets/img/Vercel.png";
+import maptiler from "@/assets/img/maptiler.png";
+import openWeather from "@/assets/img/openWeather.png";
+import leaflet from "@/assets/img/Leaflet.png";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import {
   Sheet,
-  SheetClose,
   SheetContent,
   SheetDescription,
-  SheetFooter,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+
+const myOrbitronFont = Orbitron({
+  weight: "400",
+  subsets: ["latin"],
+});
 
 export function InitialPage() {
   return (
@@ -20,45 +32,88 @@ export function InitialPage() {
         <span>
           <SunAnimated />
         </span>
-        <span>Weather Forecasts</span>
+        <span className="text-[2em]">Weather Forecasts</span>
         <SheetTrigger asChild>
           <Button variant="outline">About Project</Button>
         </SheetTrigger>
-        <button className="animate-bounce text-2xl mt-10">
+        <button className="animate-bounce text-2xl bg-[#5b5f97] text-blue-50 mt-10 p-3 rounded-3xl">
           <a href="/weather">Get Started</a>
         </button>
       </section>
-      <section className="flex items-center justify-center">
-        <a href="https://www.linkedin.com/in/felipe-damazio/" target="_blank">
+      <section className="flex flex-col items-center justify-center pb-4">
+        <a
+          href="https://www.linkedin.com/in/felipe-damazio/"
+          target="_blank"
+          className={myOrbitronFont.className}
+        >
           Developed by Felp
         </a>
+        <p className={myOrbitronFont.className}>
+          <span className="text-sm">All rights reserved ®</span>
+        </p>
       </section>
+      {/* Modal about Project */}
       <SheetContent>
         <SheetHeader>
-          <SheetTitle>Edit profile</SheetTitle>
+          <SheetTitle>Weather Forecasts</SheetTitle>
           <SheetDescription>
-            Make changes to your profile here. Click save when you're done.
+            Project developed by Felipe Damazio... A web application for
+            real-time weather forecast searches and global map integration. It
+            is possible to consult information such as degrees in the region
+            sought and various additional detailed information
           </SheetDescription>
         </SheetHeader>
-        <div className="grid gap-4 py-4">
-          <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="name" className="text-right">
-              Name
-            </Label>
-            <Input id="name" value="Pedro Duarte" className="col-span-3" />
+        <main>
+          <section className="flex flex-col items-center gap-2 pt-6">
+            <p className="text-[1.5rem]">Technologies</p>
+            <div className="techs flex gap-1">
+              <SiNextdotjs className="w-8 h-8 text-[#0a0a0a]" />
+              <FaReact className="w-8 h-8 text-[#1ab6f9]" />
+              <BiLogoTypescript className="w-8 h-8 text-[#268ad6]" />
+              <RiJavascriptFill className="w-8 h-8 text-[#f0c733]" />
+              <SiTailwindcss className="w-8 h-8 text-[#33daf0]" />
+            </div>
+          </section>
+          <section className="flex flex-col items-center gap-2 pt-6">
+            <p className="text-[1.5rem]">API's / Lib's</p>
+            <div className="techs flex flex-col justify-center items-center gap-1">
+              <Image
+                src={openWeather}
+                alt="openWeather logo"
+                className="w-[45%]"
+              />
+              <Image src={maptiler} alt="maptiler logo" className="w-[45%]" />
+              <Image src={leaflet} alt="leaflet logo" className="w-[45%]" />
+            </div>
+          </section>
+        </main>
+        <footer className="flex flex-col gap-4 p-4 w-full pt-6">
+          <Image alt="FelpAvatar" src={FelpAvatar} />
+
+          <div className="w-full flex  items-center justify-center ">
+            <a
+              href="https://www.linkedin.com/in/felipe-damazio/"
+              target="_blank"
+            >
+              <FaLinkedin className="w-12 h-12" />
+            </a>
+            <a href="https://github.com/felipedamazio" target="_blank">
+              <FaGithubSquare className="w-12 h-12" />
+            </a>
           </div>
-          <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="username" className="text-right">
-              Username
-            </Label>
-            <Input id="username" value="@peduarte" className="col-span-3" />
+          <div className="w-full flex flex-col items-center justify-center">
+            <a
+              href="https://www.linkedin.com/in/felipe-damazio/"
+              target="_blank"
+              className={myOrbitronFont.className}
+            >
+              Developed by Felp
+            </a>
+            <p className={myOrbitronFont.className}>
+              <span className="text-sm">All rights reserved ®</span>
+            </p>
           </div>
-        </div>
-        <SheetFooter>
-          <SheetClose asChild>
-            <Button type="submit">Save changes</Button>
-          </SheetClose>
-        </SheetFooter>
+        </footer>
       </SheetContent>
     </Sheet>
   );
