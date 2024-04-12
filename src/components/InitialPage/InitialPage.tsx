@@ -6,10 +6,10 @@ import { RiJavascriptFill } from "react-icons/ri";
 import { BiLogoTypescript } from "react-icons/bi";
 import Image from "next/image";
 import FelpAvatar from "@/assets/img/FelpAvatar.png";
-import vercel from "@/assets/img/Vercel.png";
+import vercel from "@/assets/img/vercel.png";
 import maptiler from "@/assets/img/maptiler.png";
 import openWeather from "@/assets/img/openWeather.png";
-import leaflet from "@/assets/img/Leaflet.png";
+import leaflet from "@/assets/img/leaflet.png";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
