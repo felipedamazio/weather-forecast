@@ -24,9 +24,9 @@ export function InitialPage() {
         <SheetTrigger asChild>
           <Button variant="outline">About Project</Button>
         </SheetTrigger>
-        <Button className="animate-bounce">
+        <button className="animate-bounce text-2xl mt-10">
           <a href="/weather">Get Started</a>
-        </Button>
+        </button>
       </section>
       <section className="flex items-center justify-center">
         <a href="https://www.linkedin.com/in/felipe-damazio/" target="_blank">

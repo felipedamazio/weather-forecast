@@ -10,13 +10,13 @@ import axios from "axios";
 // Use query import
 import { useQuery } from "react-query";
 // Comps ----------
-import { Navbar } from "@/components/NavBar";
-import { Content } from "@/components/Content";
-import { Footer } from "@/components/Footer";
+import { Navbar } from "@/components/MainPageWeatherForecast/NavBar";
+import { Content } from "@/components/MainPageWeatherForecast/Content";
+import { Footer } from "@/components/MainPageWeatherForecast/Footer";
 import { loadingCityAtom, placeAtom } from "../../app/atom";
 import { useAtom } from "jotai";
 
-export function WeatherPageComp() {
+export function MainPageWeatherForecast() {
   const API_KEY = process.env.NEXT_PUBLIC_WEATHER_KEY;
   const URL = URL_API;
 
