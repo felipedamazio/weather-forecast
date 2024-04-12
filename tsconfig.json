@@ -29,6 +29,6 @@
     ".next/types/**/*.ts",
     "src/components/Maps/Map.jsx",
     "src/components/Maps/Marker.jsx"
-  ],
+, "src/components/InitialPage/Accordion.tsx"  ],
   "exclude": ["node_modules"]
 }
