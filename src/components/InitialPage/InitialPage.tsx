@@ -80,14 +80,18 @@ export function InitialPage() {
               <Image
                 src={openWeather}
                 alt="openWeather logo"
-                className="w-[45%]"
+                className="w-[40%]"
               />
-              <Image src={maptiler} alt="maptiler logo" className="w-[45%]" />
-              <Image src={leaflet} alt="leaflet logo" className="w-[45%]" />
+              <Image src={maptiler} alt="maptiler logo" className="w-[40%]" />
+              <Image src={leaflet} alt="leaflet logo" className="w-[40%]" />
+              <span className="flex items-center justify-center">
+                <p className={myOrbitronFont.className}>Deploy by </p>
+                <Image src={vercel} alt="Vercel logo" className="w-[40%]" />
+              </span>
             </div>
           </section>
         </main>
-        <footer className="flex flex-col gap-4 p-4 w-full pt-6">
+        <footer className="flex flex-col gap-4 w-full pt-4">
           <Image alt="FelpAvatar" src={FelpAvatar} />
 
           <div className="w-full flex  items-center justify-center ">
