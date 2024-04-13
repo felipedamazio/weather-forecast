@@ -10,8 +10,10 @@ type Props = {
 export const Content = ({ data }: Props) => {
   return (
     <div className="content flex justify-center items-center flex-col gap-4">
-      <CardClimateData />
-      <Map data={data} />
+      <div className="w-full flex-col md:flex-row flex gap-4">
+        <CardClimateData />
+        <Map data={data} />
+      </div>
       <WeatherForecats7Days data={data} />
     </div>
   );

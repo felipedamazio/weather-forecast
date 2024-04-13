@@ -83,7 +83,7 @@ export function AccordionCustom() {
           <p>API's and Library's</p>
         </AccordionHeader>
         <AccordionBody className="pt-0 text-base font-normal">
-          <section className="flex flex-col items-center gap-2 pt-6">
+          <section className="flex flex-col items-center gap-2">
             <div className="techs flex flex-col justify-center items-center gap-1">
               <Image
                 src={openWeather}
