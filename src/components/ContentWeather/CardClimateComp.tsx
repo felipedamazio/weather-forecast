@@ -63,13 +63,13 @@ export const CardClimateData = () => {
     );
 
   return (
-    <div className="card w-[100%] flex flex-col gap-4  relative p-6 bg-gradient-to-tl from-[#A9C9FF] via-[#FFF3C7]  to-[#FFF3C7] shadow-xl rounded-lg transition-transform duration-500 ease-in-out transform hover:scale-105 cursor-pointer">
+    <div className="card w-full md:w-[60%] flex flex-col gap-4  relative p-6 bg-gradient-to-tl from-[#A9C9FF] via-[#FFF3C7]  to-[#FFF3C7] shadow-xl rounded-lg transition-transform duration-500 ease-in-out transform cursor-pointer">
       <div className="card-header">
-        <span className="font-semibold text-sm text-gray-600">
+        <span className="font-semibold text-sm text-gray-800">
           {data?.city.name}-{data?.city.country}
         </span>
         <br />
-        <span className="font-semibold text-sm text-gray-400">
+        <span className="font-semibold text-sm text-gray-500">
           {convertDate(formatedDate)}
         </span>
       </div>

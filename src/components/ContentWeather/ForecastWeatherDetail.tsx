@@ -31,13 +31,13 @@ export function ForecastWeatherDetail(props: ForecastWeatherDetailProps) {
   } = props;
   return (
     <CreateContainer className="gap-4">
-      <section className=" flex gap-4 items-center px-4  ">
+      <section className=" flex gap-4 items-center pl-4  ">
         <div className=" flex flex-col gap-1 items-center">
           <WeatherIcon iconName={weatehrIcon} />
           <p>{date}</p>
           <p className="text-sm">{day} </p>
         </div>
-        <div className="flex flex-col px-4">
+        <div className="flex flex-col pl-4">
           <span className="text-5xl">{convertKelvinToCelsius(temp ?? 0)}°</span>
           <p className="text-xs space-x-1 whitespace-nowrap">
             <span> Feels like</span>

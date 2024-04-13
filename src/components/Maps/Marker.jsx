@@ -7,7 +7,6 @@ const myFontAlfa_Slab_One = Alfa_Slab_One({
   subsets: ["latin"],
 });
 
-
 export const Marker = (data, map) => {
   const firstData = data?.list[1];
 
@@ -15,7 +14,10 @@ export const Marker = (data, map) => {
     .setLngLat([data?.city.coord.lon, data?.city.coord.lat])
     .setPopup(
       new maptilersdk.Popup().setHTML(
-        `${data?.city.name}-${data?.city.country} <br> ${convertKelvinToCelsius(firstData?.main.temp ?? 0)}°`
+        `<span>${data?.city.name}-${data?.city.country} </span>  
+        <span class='degree'>${convertKelvinToCelsius(
+          firstData?.main.temp ?? 0
+        )}°c</span>`
       )
     )
     .addTo(map);

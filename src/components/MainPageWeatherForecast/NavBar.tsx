@@ -131,7 +131,7 @@ export function Navbar({ location }: Props) {
           </section>
         </div>
       </nav>
-      <section className="flex   max-w-7xl px-3 md:hidden ">
+      <section className="flex  max-w-7xl px-3 md:hidden ">
         <div className="relative ">
           <SearchBox
             value={city}
@@ -148,7 +148,7 @@ export function Navbar({ location }: Props) {
           />
         </div>
       </section>
-      <section className="flex   max-w-7xl px-3 md:hidden">
+      <section className="flex  max-w-7xl px-3 md:hidden">
         <div className="relative flex justify-center items-center gap-2 flex-row">
           <Clock time={newDate.getTime()} />
         </div>

@@ -3,7 +3,7 @@ import * as maptilersdk from "@maptiler/sdk";
 import "@maptiler/sdk/dist/maptiler-sdk.css";
 import { Marker } from "@/components/Maps/Marker";
 
-export function Map({data}) {
+export function Map({ data }) {
   const API_MAP_KEY = process.env.NEXT_PUBLIC_API_MAPTILER_KEY;
 
   const mapContainer = useRef(null);
@@ -27,8 +27,8 @@ export function Map({data}) {
   }, [position.lng, position.lat, zoom]);
 
   return (
-    <div className="map-wrap w-[100%]">
-      <div ref={mapContainer} className="map h-[30vh] rounded-lg" />
+    <div className="map-wrap w-full md:w-[40%]">
+      <div ref={mapContainer} className="map h-[30vh] md:h-full rounded-lg" />
     </div>
   );
 }
