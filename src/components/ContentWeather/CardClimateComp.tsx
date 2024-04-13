@@ -119,7 +119,6 @@ export const CardClimateData = () => {
         <div className="details-weather">
           <WeatherDetailsHours data={data} />
         </div>
-
         <CreateContainer className="bg-yellow-300/80  px-6 gap-4 justify-between overflow-x-auto">
           <WeatherDetails
             sunrise={format(
