@@ -5,6 +5,10 @@ import { URL_API_2 } from "@/API/UrlApi";
 import { URL_API_3 } from "@/API/UrlApi";
 //Comps----------
 import { SearchBox } from "@/components/ContentWeather/SearchBox";
+import { Marker } from "@/components/Maps/Marker";
+import { Map } from "@/components/Maps/Map";
+import { WeatherData } from "@/types/WeatherData";
+
 // import { handleCurrentLocation } from "@/components/Location/handleCurrentLocation";
 // Icons ----
 import { MdOutlineLocationOn, MdWbSunny } from "react-icons/md";
@@ -15,9 +19,9 @@ import { useAtom } from "jotai";
 import axios from "axios";
 import { Clock } from "@/components/CurrentHour/Clock";
 
-type Props = { location?: string };
+type Props = { location?: string; data?: WeatherData };
 
-export function Navbar({ location }: Props) {
+export function Navbar({ location, data }: Props) {
   const [city, setCity] = useState("");
   const [error, setError] = useState("");
   //
@@ -67,6 +71,7 @@ export function Navbar({ location }: Props) {
         setLoadingCity(false);
         setPlace(city);
         setShowSuggestions(false);
+        Marker(data, Map);
       }, 500);
     }
   }
