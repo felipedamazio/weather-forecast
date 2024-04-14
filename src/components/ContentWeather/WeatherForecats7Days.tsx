@@ -4,7 +4,9 @@ import { format, parseISO, fromUnixTime } from "date-fns";
 import { metersToKilometers } from "@/utils/metersToKilometers";
 import { convertWindSpeed } from "@/utils/convertWindSpeed";
 import { Alfa_Slab_One } from "next/font/google";
+import { convertDateString } from "@/utils/convertDateString";
 import { convertDate } from "@/utils/convertDate";
+// import { convertDate } from "@/utils/convertDate";
 const myFontAlfa_Slab_One = Alfa_Slab_One({
   weight: "400",
   subsets: ["latin"],
@@ -17,15 +19,17 @@ type Props = {
 export const WeatherForecats7Days = ({ data }: Props) => {
   const uniqueDates = [
     ...new Set(
-      data?.list.map(
-        (entry) => new Date(entry.dt * 1000).toISOString().split("T")[0]
+      data?.list.map((entry) =>
+        convertDate(new Date(entry.dt * 1000).toISOString().split("T")[0])
       )
     ),
   ];
 
   const firstDataForEachDate = uniqueDates.map((date) => {
     return data?.list.find((entry) => {
-      const entryDate = new Date(entry.dt * 1000).toISOString().split("T")[0];
+      const entryDate = convertDate(
+        new Date(entry.dt * 1000).toISOString().split("T")[0]
+      );
       const entryTime = new Date(entry.dt * 1000).getHours();
       return entryDate === date && entryTime >= 6;
     });
@@ -48,7 +52,7 @@ export const WeatherForecats7Days = ({ data }: Props) => {
             date={d ? format(parseISO(d.dt_txt), "dd.MM") : ""}
             day={
               d
-                ? convertDate(d.dt_txt.split(" ").shift() ?? "week-day")
+                ? convertDateString(d.dt_txt.split(" ").shift() ?? "week-day")
                     .split(",")
                     .shift()
                 : ""

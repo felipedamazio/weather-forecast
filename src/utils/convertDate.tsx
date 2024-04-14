@@ -8,12 +8,9 @@ export function convertDate(date: string) {
   };
 
   let acresDay = Number(corretDate.day) + 1;
-  let formatedDate = `${corretDate.year}-${corretDate.month}-${acresDay.toString()}`;
-  const fullDateFormated = new Date(formatedDate);
+  const fullDateFormated = `${corretDate.year}-${
+    corretDate.month
+  }-${acresDay.toString()}`;
 
-  const finalDate = new Intl.DateTimeFormat("en-US", {
-    dateStyle: "full",
-  }).format(fullDateFormated);
-
-  return finalDate;
+  return fullDateFormated;
 }
