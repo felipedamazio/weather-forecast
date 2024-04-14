@@ -6,7 +6,7 @@ import { URL_API } from "@/API/UrlApi";
 import axios from "axios";
 import { WeatherData } from "@/types/WeatherData";
 import { convertKelvinToCelsius } from "@/utils/convertKelvinToCelsius";
-import { convertDate } from "@/utils/convertDate";
+import { convertDateString } from "@/utils/convertDateString";
 import { WeatherDetailsHours } from "@/components/ContentWeather/WeatherDetailsHours";
 import { WeatherDetails } from "@/components/ContentWeather/WeatherDetails";
 import { CreateContainer } from "@/components/CreateDefaultContainer/CreateContainer";
@@ -71,7 +71,7 @@ export const CardClimateData = () => {
           </span>
           <br />
           <span className="font-semibold text-sm text-gray-500">
-            {convertDate(formatedDate)}
+            {convertDateString(formatedDate)}
           </span>
         </div>
         <div className="weather-degree-infos flex flex-row items-center">
