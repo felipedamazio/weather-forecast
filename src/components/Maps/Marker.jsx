@@ -21,5 +21,5 @@ export const Marker = (data, map) => {
       )
     )
     .addTo(map);
-  return <>{MyMarker}</>;
+  return MyMarker;
 };

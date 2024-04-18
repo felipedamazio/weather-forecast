@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import * as maptilersdk from "@maptiler/sdk";
 import "@maptiler/sdk/dist/maptiler-sdk.css";
+import { convertKelvinToCelsius } from "@/utils/convertKelvinToCelsius";
 import { Marker } from "@/components/Maps/Marker";
 
 export function Map({ data }) {
@@ -10,21 +11,26 @@ export function Map({ data }) {
   const map = useRef(null);
   const position = { lng: data?.city.coord.lon, lat: data?.city.coord.lat };
   const [zoom] = useState(11);
+  const firstData = data?.list[1];
 
   maptilersdk.config.apiKey = API_MAP_KEY;
 
   useEffect(() => {
-    if (map.current) return; // stops map from intializing more than once
+    if (!map.current) {
+      map.current = new maptilersdk.Map({
+        container: mapContainer.current,
+        style: maptilersdk.MapStyle.STREETS,
+        center: [position.lng, position.lat],
+        zoom: zoom,
+      });
+    }
 
-    map.current = new maptilersdk.Map({
-      container: mapContainer.current,
-      style: maptilersdk.MapStyle.STREETS,
-      center: [position.lng, position.lat],
-      zoom: zoom,
-    });
+    // Remove all previous markers
+    // map.current.removeAllMarkers();
 
+    // Add a new marker
     Marker(data, map.current);
-  }, [position.lng, position.lat, zoom]);
+  }, [data, position.lng, position.lat, zoom]);
 
   return (
     <div className="map-wrap w-full md:w-[40%]">
