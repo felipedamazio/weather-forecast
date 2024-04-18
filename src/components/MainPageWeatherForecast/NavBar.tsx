@@ -5,7 +5,6 @@ import { URL_API_2 } from "@/API/UrlApi";
 import { URL_API_3 } from "@/API/UrlApi";
 //Comps----------
 import { SearchBox } from "@/components/ContentWeather/SearchBox";
-import { Marker } from "@/components/Maps/Marker";
 import { Map } from "@/components/Maps/Map";
 import { WeatherData } from "@/types/WeatherData";
 
@@ -71,7 +70,7 @@ export function Navbar({ location, data }: Props) {
         setLoadingCity(false);
         setPlace(city);
         setShowSuggestions(false);
-        Marker(data, Map);
+        <Map data={data} />;
       }, 500);
     }
   }
