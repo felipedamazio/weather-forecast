@@ -41,7 +41,10 @@ export function Navbar({ location, data }: Props) {
         const response = await axios.get(baseURL);
 
         const suggestions = response.data.list.map((item: any) => item.name);
-        setSuggestions(suggestions);
+        const noRepeatLocale = [...new Set(suggestions)];
+        console.log(noRepeatLocale);
+
+        setSuggestions((suggestions));
         setError("");
         setShowSuggestions(true);
       } catch (error) {
