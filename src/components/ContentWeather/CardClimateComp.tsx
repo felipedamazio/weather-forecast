@@ -46,7 +46,6 @@ export const CardClimateData = () => {
   const firstData = data?.list[1];
 
   const formatedDate = firstData?.dt_txt.split(" ")[0] ?? "";
-  console.log("Req data", data);
 
   if (isLoading)
     return (
