@@ -23,17 +23,16 @@ export function Map({ data }) {
         center: [position.lng, position.lat],
         zoom: zoom,
       });
+    } else {
+      map.current.panTo([position.lng, position.lat]);
     }
-
-    // Remove all previous markers
-    // map.current.removeAllMarkers();
 
     // Add a new marker
 
     if (marker.current) marker.current.remove();
 
     marker.current = new maptilersdk.Marker({ color: "#d72323d1" })
-      .setLngLat([data?.city.coord.lon, data?.city.coord.lat])
+      .setLngLat([position.lng, position.lat])
       .setPopup(
         new maptilersdk.Popup().setHTML(
           `<span>${data?.city.name}-${data?.city.country} </span>  
