@@ -14,6 +14,7 @@ import { MdOutlineLocationOn, MdWbSunny } from "react-icons/md";
 import { MdMyLocation } from "react-icons/md";
 import { loadingCityAtom, placeAtom } from "@/app/atom";
 import { useAtom } from "jotai";
+
 //Request axios import
 import axios from "axios";
 import { Clock } from "@/components/CurrentHour/Clock";

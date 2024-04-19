@@ -6,6 +6,7 @@ import { Orbitron } from "next/font/google";
 import { Bebas_Neue } from "next/font/google";
 import { FaLinkedin, FaGithubSquare } from "react-icons/fa";
 import Image from "next/image";
+import Link from "next/link";
 import FelpAvatar from "@/assets/img/FelpAvatar.png";
 
 import { Button } from "@/components/ui/button";
@@ -34,13 +35,15 @@ export function InitialPage() {
           <SunAnimated />
         </span>
         <p className={MyPlatypi.className}>
-          <span className="text-[2.6rem] text-[#858585]">Weather Forecasts</span>
+          <span className="text-[2.6rem] text-[#858585]">
+            Weather Forecasts
+          </span>
         </p>
         <SheetTrigger asChild>
           <Button variant="outline">About Project</Button>
         </SheetTrigger>
         <button className="animate-bounce text-2xl bg-[#7852FB] text-blue-50 mt-10 p-3 rounded-3xl">
-          <a href="/weather">Get Started</a>
+          <Link href="/weather">Get Started</Link>
         </button>
       </section>
       <section className="flex flex-col items-center justify-center pb-4">

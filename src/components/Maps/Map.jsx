@@ -2,13 +2,13 @@ import React, { useRef, useEffect, useState } from "react";
 import * as maptilersdk from "@maptiler/sdk";
 import "@maptiler/sdk/dist/maptiler-sdk.css";
 import { convertKelvinToCelsius } from "@/utils/convertKelvinToCelsius";
-import { Marker } from "@/components/Maps/Marker";
 
 export function Map({ data }) {
   const API_MAP_KEY = process.env.NEXT_PUBLIC_API_MAPTILER_KEY;
 
   const mapContainer = useRef(null);
   const map = useRef(null);
+  const marker = useRef(null);
   const position = { lng: data?.city.coord.lon, lat: data?.city.coord.lat };
   const [zoom] = useState(11);
   const firstData = data?.list[1];
@@ -29,7 +29,20 @@ export function Map({ data }) {
     // map.current.removeAllMarkers();
 
     // Add a new marker
-    Marker(data, map.current);
+
+    if (marker.current) marker.current.remove();
+
+    marker.current = new maptilersdk.Marker({ color: "#d72323d1" })
+      .setLngLat([data?.city.coord.lon, data?.city.coord.lat])
+      .setPopup(
+        new maptilersdk.Popup().setHTML(
+          `<span>${data?.city.name}-${data?.city.country} </span>  
+          <span class='degree'>${convertKelvinToCelsius(
+            firstData?.main.temp ?? 0
+          )}°c</span>`
+        )
+      )
+      .addTo(map.current);
   }, [data, position.lng, position.lat, zoom]);
 
   return (
