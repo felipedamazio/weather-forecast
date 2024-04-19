@@ -44,7 +44,7 @@ export function Navbar({ location, data }: Props) {
         const noRepeatLocale = [...new Set(suggestions)];
         console.log(noRepeatLocale);
 
-        setSuggestions((suggestions));
+        setSuggestions(suggestions);
         setError("");
         setShowSuggestions(true);
       } catch (error) {
@@ -102,65 +102,67 @@ export function Navbar({ location, data }: Props) {
   const newDate = new Date();
   return (
     <>
-      <nav className="shadow-sm  sticky top-0 left-0 z-50 bg-white">
-        <div className="h-[80px]     w-full    flex   justify-between items-center  max-w-7xl px-3 mx-auto">
-          <p className="flex items-center justify-center gap-2  ">
-            <span className="text-gray-500 text-3xl">Weather</span>
-            <MdWbSunny className="text-3xl mt-1 text-yellow-300" />
-          </p>
-          <section>
-            <div className="relative hidden md:flex flex-col">
-              <Clock time={newDate.getTime()} />
-            </div>
-          </section>
-          <section className="flex gap-[0.310rem] items-center">
-            <MdMyLocation
-              title="Your Current Location"
-              onClick={handleCurrentLocation}
-              className="text-2xl  text-gray-400 hover:opacity-80 cursor-pointer"
+      <nav className="flex flex-col gap-1 sticky top-0 left-0 z-50">
+        <div className="shadow-sm   bg-white">
+          <div className="h-[80px]     w-full    flex   justify-between items-center  max-w-7xl px-3 mx-auto">
+            <p className="flex items-center justify-center gap-2  ">
+              <span className="text-gray-500 text-3xl">Weather</span>
+              <MdWbSunny className="text-3xl mt-1 text-yellow-300" />
+            </p>
+            <section>
+              <div className="relative hidden md:flex flex-col">
+                <Clock time={newDate.getTime()} />
+              </div>
+            </section>
+            <section className="flex gap-[0.310rem] items-center">
+              <MdMyLocation
+                title="Your Current Location"
+                onClick={handleCurrentLocation}
+                className="text-2xl  text-gray-400 hover:opacity-80 cursor-pointer"
+              />
+              <MdOutlineLocationOn className="text-3xl" />
+              <p className="text-slate-900/80 text-sm"> {location} </p>
+              <div className="relative hidden md:flex">
+                <SearchBox
+                  value={city}
+                  onSubmit={handleSubmiSearch}
+                  onChange={(e) => handleInputChang(e.target.value)}
+                />
+                <SuggetionBox
+                  {...{
+                    showSuggestions,
+                    suggestions,
+                    handleSuggestionClick,
+                    error,
+                  }}
+                />
+              </div>
+            </section>
+          </div>
+        </div>
+        <section className="flex  max-w-7xl px-3 md:hidden ">
+          <div className="relative ">
+            <SearchBox
+              value={city}
+              onSubmit={handleSubmiSearch}
+              onChange={(e) => handleInputChang(e.target.value)}
             />
-            <MdOutlineLocationOn className="text-3xl" />
-            <p className="text-slate-900/80 text-sm"> {location} </p>
-            <div className="relative hidden md:flex">
-              <SearchBox
-                value={city}
-                onSubmit={handleSubmiSearch}
-                onChange={(e) => handleInputChang(e.target.value)}
-              />
-              <SuggetionBox
-                {...{
-                  showSuggestions,
-                  suggestions,
-                  handleSuggestionClick,
-                  error,
-                }}
-              />
-            </div>
-          </section>
-        </div>
+            <SuggetionBox
+              {...{
+                showSuggestions,
+                suggestions,
+                handleSuggestionClick,
+                error,
+              }}
+            />
+          </div>
+        </section>
       </nav>
-      <section className="flex  max-w-7xl px-3 md:hidden ">
-        <div className="relative ">
-          <SearchBox
-            value={city}
-            onSubmit={handleSubmiSearch}
-            onChange={(e) => handleInputChang(e.target.value)}
-          />
-          <SuggetionBox
-            {...{
-              showSuggestions,
-              suggestions,
-              handleSuggestionClick,
-              error,
-            }}
-          />
-        </div>
-      </section>
-      <section className="flex  max-w-7xl px-3 md:hidden">
+      {/* <section className="flex  max-w-7xl px-3 md:hidden">
         <div className="relative flex justify-center items-center gap-2 flex-row">
           <Clock time={newDate.getTime()} />
         </div>
-      </section>
+      </section> */}
     </>
   );
 }
