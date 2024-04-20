@@ -39,7 +39,7 @@ export const WeatherForecats7Days = ({ data }: Props) => {
     <>
       {/* 7 day forcast data  */}
       <section className="flex w-full flex-col gap-4  ">
-        <p className="text-lg text-gray-500">
+        <p className="text-lg text-[#033043]">
           <span className={myFontAlfa_Slab_One.className}>
             Forcast (7 days)
           </span>

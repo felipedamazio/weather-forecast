@@ -63,27 +63,26 @@ export const CardClimateData = () => {
 
   return (
     <section className="flex flex-col w-full md:w-[60%] gap-4">
-      <div className="card w-full flex flex-col gap-4  relative p-6 bg-gradient-to-tl from-[#a49aea]  to-[#fac5e2] shadow-xl rounded-lg transition-transform duration-500 ease-in-out transform cursor-pointer">
-        <div className="card-header">
-          <span className="font-semibold text-sm text-gray-800">
+      <div className="card w-full flex flex-col gap-4  relative p-6 bg-gradient-to-br from-[#cfd3f0ad] to-[#a7a0ea0a] shadow-xl rounded-[50px] transition-transform duration-500 ease-in-out transform cursor-pointer">
+        <div className="card-header flex flex-col">
+          <span className="font-semibold text-[0.9rem] text-[#033043]">
             {data?.city.name}-{data?.city.country}
           </span>
-          <br />
-          <span className="font-semibold text-sm text-gray-500">
+          <span className="font-semibold text-[1rem] text-gray-500">
             {convertDateString(formatedDate)}
           </span>
         </div>
         <div className="weather-degree-infos flex flex-row items-center">
-          <span className="temp flex flex-col  bottom-4 left-6 font-semibold text-7xl text-brown-900 gap-3">
+          <span className="temp flex flex-col  bottom-4 left-6 font-semibold text-7xl  gap-3">
             <div className="">
               {convertKelvinToCelsius(firstData?.main.temp ?? 0)}°
-              <div className="temp-scale bottom-6 right-6 w-20 h-5 flex items-center justify-center bg-gray-100 rounded-lg">
-                <span className="font-semibold text-xs text-gray-600">
+              <div className="temp-scale bottom-6 right-6 w-20 h-5 flex items-center justify-center bg-[#f3ff47] rounded-lg">
+                <span className="font-semibold text-xs text-[#424242]">
                   Celsius
                 </span>
               </div>
             </div>
-            <div className="flex gap-2 text-xs text-gray-500 pb-2 ">
+            <div className="flex gap-2 text-xs text-white pb-2 ">
               <div className="temp-min flex items-center">
                 <FaTemperatureLow className="text-3xl" />
                 <span className={myFontAlfa_Slab_One.className}>
@@ -108,7 +107,7 @@ export const CardClimateData = () => {
                 firstData?.dt_txt ?? ""
               )}
             />
-            <p className="flex items-center flex-col text-gray-500">
+            <p className="flex items-center flex-col text-[#033043]">
               <span className={myFontAlfa_Slab_One.className}>
                 {firstData?.weather[0].description}
               </span>
@@ -118,7 +117,9 @@ export const CardClimateData = () => {
         <div className="details-weather">
           <WeatherDetailsHours data={data} />
         </div>
-        <CreateContainer className="bg-yellow-300/80  px-6 gap-4 justify-between overflow-x-auto">
+      </div>
+      <div className="second-card-details">
+        <CreateContainer className="px-6 gap-1 justify-between overflow-x-auto">
           <WeatherDetails
             sunrise={format(
               fromUnixTime(data?.city.sunrise ?? 1702517657),
