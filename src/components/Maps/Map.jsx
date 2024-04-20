@@ -48,7 +48,7 @@ export function Map({ data }) {
 
   return (
     <div className="map-wrap w-full md:w-[40%]">
-      <div ref={mapContainer} className="map h-[30vh] md:h-full rounded-lg" />
+      <div ref={mapContainer} className="map h-[30vh] md:h-full rounded-[2rem]" />
     </div>
   );
 }

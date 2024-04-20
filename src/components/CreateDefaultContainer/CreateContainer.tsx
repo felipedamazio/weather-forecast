@@ -8,7 +8,7 @@ export function CreateContainer(props: React.HTMLProps<HTMLDivElement>) {
     <div
       {...props}
       className={cn(
-        "w-full bg-white border rounded-xl flex py-4 shadow-sm",
+        "w-full bg-white border rounded-[25px] flex shadow-sm",
         props.className
       )}
     />

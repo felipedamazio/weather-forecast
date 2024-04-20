@@ -52,7 +52,7 @@ export function MainPageWeatherForecast() {
     );
   // charger total page
   return (
-    <div className="flex flex-col gap-4 bg-gray-100 min-h-screen ">
+    <div className="flex flex-col gap-4 bg-gradient-to-t from-[#000000d6]  to-[#faffb1] min-h-screen ">
       <Navbar location={data?.city.name} data={data} />
       <main className="px-3 max-w-7xl mx-auto flex flex-col gap-9  w-full h-full pb-10 pt-4 ">
         <section className="space-y-4 ">
