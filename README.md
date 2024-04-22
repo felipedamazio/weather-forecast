@@ -61,7 +61,7 @@ bun dev
 ---
 
 <a href="https://www.linkedin.com/in/felipe-damazio/">
-<img width="200" style="border-radius: 50%;" src="https://media.licdn.com/dms/image/D4D03AQEGbvDY5m-KrQ/profile-displayphoto-shrink_800_800/0/1710867005445?e=1717027200&v=beta&t=nWqsHp4WncDPxNYsxrRgKn5KmBPKUJRp9Oetw2y8wNo">  
+<img width="200" style="border-radius: 50%;" src="https://media.licdn.com/dms/image/D4D03AQGWf9sa_6DBfg/profile-displayphoto-shrink_800_800/0/1713484300658?e=1719446400&v=beta&t=lv8N3-KzSKDI3u4lokO9DXv_BfOk8N7rs0en8B66SnM">  
  </a>
  
 Developed by Felp 🚀
