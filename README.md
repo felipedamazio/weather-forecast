@@ -1,5 +1,7 @@
 # WEATHER FORECAST
 
+![READE-ME-Felp](https://github.com/felipedamazio/weather-forecast/assets/71530559/84b90f15-d07d-46a1-9b98-400404531127)
+
 <div align="center">
 <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/felipedamazio/weather-forecast?style=for-the-badge">
 <img alt="GitHub deploy" src="https://img.shields.io/github/deployments/felipedamazio/weather-forecast/production?style=for-the-badge&logo=vercel">	
