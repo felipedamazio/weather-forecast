@@ -42,18 +42,11 @@ export function Map({ data }) {
       </span>
       <a href="http://maps.google.com/maps?q=&layer=c&cbll=${position.lat},${
             position.lng
-          }&cbp=11,0,0,0,0" target="blank"> <b>View Street</b></a>
+          }&cbp=11,0,0,0,0" target="blank"> <b>View Location</b></a>
       `
         )
       )
       .addTo(map.current);
-
-    // map.on("click", function () {
-    //   console.log(
-    //     "A click event has occurred on a visible portion of the poi-label layer at "
-    //   );
-    //   const point = marker.current.setLngLat([position.lng, position.lat]);
-    // });
   }, [data, position.lng, position.lat, zoom]);
 
   return (
