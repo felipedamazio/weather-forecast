@@ -24,7 +24,7 @@ export function Map({ data }) {
           center: [position.lng, position.lat],
           zoom: zoom,
         }))
-      : map.current.panTo([position.lng, position.lat],{duration: 5000});
+      : map.current.panTo([position.lng, position.lat], { duration: 5000 });
 
     // Add a new marker
 
@@ -40,15 +40,28 @@ export function Map({ data }) {
       <span class="degree">
         ${convertKelvinToCelsius(firstData?.main.temp ?? 0)}°c
       </span>
+      <a href="http://maps.google.com/maps?q=&layer=c&cbll=${position.lat},${
+            position.lng
+          }&cbp=11,0,0,0,0" target="blank"> <b>View Street</b></a>
       `
         )
       )
       .addTo(map.current);
+
+    // map.on("click", function () {
+    //   console.log(
+    //     "A click event has occurred on a visible portion of the poi-label layer at "
+    //   );
+    //   const point = marker.current.setLngLat([position.lng, position.lat]);
+    // });
   }, [data, position.lng, position.lat, zoom]);
 
   return (
     <div className="map-wrap w-full md:w-[40%]">
-      <div ref={mapContainer} className="map h-[30vh] md:h-full rounded-[2rem]" />
+      <div
+        ref={mapContainer}
+        className="map h-[30vh] md:h-full rounded-[2rem]"
+      />
     </div>
   );
 }
