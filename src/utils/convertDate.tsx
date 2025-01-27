@@ -7,7 +7,7 @@ export function convertDate(date: string) {
     day: date.split("-").pop(),
   };
 
-  let acresDay = Number(corretDate.day) + 1;
+  let acresDay = Number(corretDate.day);
   const fullDateFormated = `${corretDate.year}-${
     corretDate.month
   }-${acresDay.toString()}`;
