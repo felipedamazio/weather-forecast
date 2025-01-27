@@ -43,7 +43,7 @@ export const CardClimateData = () => {
     refetch();
   }, [place, refetch]);
 
-  const firstData = data?.list[1];
+  const firstData = data?.list[0];
 
   const formatedDate = firstData?.dt_txt.split(" ")[0] ?? "";
 
